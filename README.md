@@ -48,3 +48,4 @@ To learn more about the capabilities of `serverless-offline`, please refer to it
 - Generated this example using `serverless` command and selecting `Express API`
 - Installed serverless using `serverless plugin install -n serverless-offline`
 - Added `serverless-offline` to `dev` script
+- Moved Express logic into its own folder

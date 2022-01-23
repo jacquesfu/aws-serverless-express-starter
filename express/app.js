@@ -2,17 +2,11 @@ const serverless = require("serverless-http");
 const express = require("express");
 const app = express();
 
-app.get("/", (req, res, next) => {
-  return res.status(200).json({
-    message: "Hello from root!",
-  });
-});
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
 
-app.get("/hello", (req, res, next) => {
-  return res.status(200).json({
-    message: "Hello from path!",
-  });
-});
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
 
 app.use((req, res, next) => {
   return res.status(404).json({
